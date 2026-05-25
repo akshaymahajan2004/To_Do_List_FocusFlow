@@ -6,7 +6,7 @@ export interface Todo {
   updatedAt: string;
 }
 
-const BASE_URL = '/api/todos';
+const BASE_URL = 'https://to-do-list-focusflow.onrender.com/api/todos';
 
 /**
  * Handle API responses and standardize errors
