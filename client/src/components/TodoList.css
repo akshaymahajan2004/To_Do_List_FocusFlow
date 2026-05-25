@@ -1,0 +1,197 @@
+.todo-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+/* Search and Filters bar */
+.list-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-tertiary);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  padding-left: 42px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  outline: none;
+  transition: all var(--transition-speed-fast) ease;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+  background: var(--bg-secondary);
+}
+
+.filter-sort-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Tabs/Pills for filters */
+.filter-tabs {
+  display: flex;
+  background: var(--bg-primary);
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.filter-tab {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all var(--transition-speed-fast) ease;
+}
+
+.filter-tab:hover {
+  color: var(--text-primary);
+}
+
+.filter-tab.active {
+  background: var(--bg-secondary);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Sort dropdown */
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sort-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.sort-select {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-sm);
+  outline: none;
+  cursor: pointer;
+  transition: all var(--transition-speed-fast) ease;
+}
+
+.sort-select:focus {
+  border-color: var(--accent);
+}
+
+/* Main tasks items scrollbox */
+.tasks-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Skeleton Loading Templates */
+.skeleton-task-card {
+  height: 74px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+}
+
+/* Premium Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  gap: 16px;
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-glass);
+  border-radius: var(--border-radius-lg);
+  animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.empty-state-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 2px solid var(--border-glass);
+  box-shadow: var(--shadow-md);
+  opacity: 0.85;
+  filter: drop-shadow(0 8px 16px rgba(var(--hue-primary), 0.15));
+  animation: wave 4s ease-in-out infinite;
+}
+
+.empty-state-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.empty-state-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .list-controls {
+    padding: 12px;
+  }
+  .filter-sort-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-tabs {
+    justify-content: space-between;
+  }
+  .filter-tab {
+    flex: 1;
+    text-align: center;
+  }
+  .sort-wrapper {
+    justify-content: space-between;
+  }
+}

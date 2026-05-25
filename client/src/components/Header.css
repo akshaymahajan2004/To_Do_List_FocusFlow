@@ -1,0 +1,119 @@
+.todo-header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Date and Greeting info */
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.header-date {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Control buttons & progress ring */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Premium Theme Switcher */
+.theme-toggle {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--accent);
+}
+
+.theme-toggle svg {
+  transition: transform var(--transition-speed-slow) cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-toggle:hover svg {
+  transform: rotate(45deg);
+}
+
+/* Circular Progress Tracker */
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 52px;
+  height: 52px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle-bg {
+  stroke: var(--bg-tertiary);
+  transition: stroke var(--transition-speed-normal);
+}
+
+.progress-ring-circle {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--transition-speed-slow) cubic-bezier(0.4, 0, 0.2, 1), stroke var(--transition-speed-normal);
+}
+
+.progress-text {
+  position: absolute;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .todo-header {
+    padding: 16px;
+  }
+  .header-title {
+    font-size: 1.4rem;
+  }
+  .header-actions {
+    gap: 12px;
+  }
+}

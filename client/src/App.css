@@ -1,0 +1,79 @@
+/* Background glow effects */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  position: relative;
+}
+
+/* Glowing aesthetic blobs for that premium 3D design */
+.bg-glow-1 {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: var(--border-radius-full);
+  background: radial-gradient(circle, rgba(var(--hue-primary), 0.15) 0%, rgba(var(--hue-primary), 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.bg-glow-2 {
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: var(--border-radius-full);
+  background: radial-gradient(circle, rgba(280, 85, 60, 0.1) 0%, rgba(280, 85, 60, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+[data-theme='dark'] .bg-glow-1 {
+  background: radial-gradient(circle, rgba(var(--hue-primary), 0.25) 0%, rgba(var(--hue-primary), 0) 75%);
+}
+
+[data-theme='dark'] .bg-glow-2 {
+  background: radial-gradient(circle, rgba(280, 85, 60, 0.15) 0%, rgba(280, 85, 60, 0) 75%);
+}
+
+/* Footer styling */
+.app-footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.app-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-speed-fast) ease;
+}
+
+.app-footer a:hover {
+  color: var(--accent-dark);
+}
+
+/* Focus Flow logo / icon in footer */
+.footer-heart {
+  color: var(--danger);
+  display: inline-block;
+  animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
